@@ -1,0 +1,31 @@
+db_host: "10.102.75.119"
+db_port: 5432
+db_name: "robot_data"
+db_user: "robot_researcher" # Use the user granted privileges
+db_password: "secret"
+
+# Topic to Ingest
+topic_name: "/scan" # Or whatever your laser scan topic is called
+topic_msg_type: "sensor_msgs/LaserScan"
+
+# Database Target
+db_table_name: "laser_scans" # Matches the table created above
+
+# Mapping from DB Columns to ROS Message Fields
+column_mapping:
+  time: "header.stamp"
+  frame_id: "header.frame_id"
+  angle_min: "angle_min"
+  angle_max: "angle_max"
+  angle_increment: "angle_increment"
+  time_increment: "time_increment"
+  scan_time: "scan_time"
+  range_min: "range_min"
+  range_max: "range_max"
+  # Map ROS array fields to the corresponding JSONB DB columns
+  ranges: "ranges"
+  intensities: "intensities"
+
+# Batching Parameters (Optional)
+# batch_size: 50 # LaserScan messages can be larger, maybe smaller batch
+# flush_interval: 5.0

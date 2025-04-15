@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  ros-noetic:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ros1_noetic_dev_compose
+    # Mount the workspace directory from the host into the container
+    volumes:
+      - ./ros1_ws:/root/ros1_ws
+    # Keep stdin open and allocate a tty for interactive use
+    stdin_open: true
+    tty: true
+    # Optional: Uncomment if you need host networking (e.g., hardware access)
+    # network_mode: host
+    # Optional: Uncomment if you need specific devices
+    # devices:
+    #   - "/dev/ttyUSB0:/dev/ttyUSB0"
+    # Environment variables (ROS_MASTER_URI defaults correctly usually)
+    # environment:
+    #   - ROS_MASTER_URI=http://localhost:11311
+    #   - ROS_IP= # Often not needed with default bridge networking

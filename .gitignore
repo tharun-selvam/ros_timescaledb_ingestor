@@ -1,0 +1,47 @@
+# Generated Catkin files
+#---------------------------------------
+devel/
+build/
+install/
+logs/
+*.log
+
+# Generated IDE files
+#---------------------------------------
+.project
+.cproject
+.vscode/
+
+# Python build artifacts
+#---------------------------------------
+*.pyc
+*.pyo
+__pycache__/
+dist/
+build/
+*.egg-info/
+*.so
+
+# Backup files
+#---------------------------------------
+*~
+*.swp
+*.swo
+*.bak
+
+# Specific packages/files you might want to ignore
+# (Uncomment and modify if needed)
+#---------------------------------------
+# src/large_data_package/data/
+# src/secret_config_package/config/credentials.yaml
+
+# Operating System files
+#---------------------------------------
+.DS_Store
+Thumbs.db
+
+# Archives
+#---------------------------------------
+*.zip
+*.tar.gz
+*.tgz
