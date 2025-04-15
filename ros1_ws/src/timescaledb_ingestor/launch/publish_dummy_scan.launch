@@ -1,0 +1,9 @@
+<launch>
+    <!-- Start the dummy laser scan publisher node -->
+    <node pkg="timescaledb_ingestor" type="dummy_laser_publisher.py" name="dummy_laser_publisher_node" output="screen">
+        <!-- Set parameters (optional, defaults are defined in the script) -->
+        <param name="topic" value="/scan" /> <!-- Topic to publish on -->
+        <param name="frame_id" value="dummy_laser" /> <!-- Frame ID for the header -->
+        <param name="rate" value="15.0" /> <!-- Publish rate in Hz -->
+    </node>
+</launch>
