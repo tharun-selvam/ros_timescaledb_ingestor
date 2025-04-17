@@ -3,7 +3,7 @@
 import rospy
 from sensor_msgs.msg import LaserScan
 import math
-import random # For slightly varying data
+import random
 
 count_msgs_sent = 0
 

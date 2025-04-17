@@ -1,10 +1,10 @@
 <launch>
     <!-- Start the ingestor node -->
-    <node pkg="timescaledb_ingestor" type="single_topic_ingestor.py" name="timescaledb_ingestor_node" output="screen">
+    <!-- Note: type matches the executable name from CMakeLists.txt -->
+    <node pkg="timescaledb_ingestor" type="timescaledb_ingestor_cpp_node" name="timescaledb_ingestor_node" output="screen">
         <!-- Load parameters FROM the YAML file INTO the node's private namespace -->
+        <!-- Ensure config/ingest_params.yaml has the correct parameters -->
         <rosparam command="load" file="$(find timescaledb_ingestor)/config/ingest_params.yaml" />
 
-        <!-- You can still override specific parameters here if needed, e.g.: -->
-        <!-- <param name="db_host" value="custom_db_host"/> -->
     </node>
 </launch>

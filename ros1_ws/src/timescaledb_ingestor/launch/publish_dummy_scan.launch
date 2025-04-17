@@ -4,6 +4,6 @@
         <!-- Set parameters (optional, defaults are defined in the script) -->
         <param name="topic" value="/scan" /> <!-- Topic to publish on -->
         <param name="frame_id" value="dummy_laser" /> <!-- Frame ID for the header -->
-        <param name="rate" value="15.0" /> <!-- Publish rate in Hz -->
+        <param name="rate" value="25.0" /> <!-- Publish rate in Hz -->
     </node>
 </launch>
