@@ -1,0 +1,11 @@
+<launch>
+    <!-- Start the Rolling Bag Recorder node -->
+    <node pkg="timescaledb_ingestor" type="rolling_recorder.py" name="rolling_recorder_node" output="screen" ns="rolling_recorder">
+        <rosparam command="load" file="$(find timescaledb_ingestor)/config/rolling_ingest_params.yaml" />
+    </node>
+
+    <!-- Start the Bag Processor node -->
+    <node pkg="timescaledb_ingestor" type="bag_processor.py" name="bag_processor_node" output="screen" ns="bag_processor">
+         <rosparam command="load" file="$(find timescaledb_ingestor)/config/rolling_ingest_params.yaml" />
+    </node>
+</launch>

@@ -1,0 +1,30 @@
+# Parameters FOR the Rolling Bag Recorder Node (NO top-level key)
+topic_name: "/scan"
+topic_msg_type: "sensor_msgs/LaserScan"
+bag_directory: "/tmp/rosbags_for_ingest"
+max_bag_duration: 5.0
+
+# Parameters FOR the Bag Processor Node (NO top-level key)
+db_host: "10.102.75.119" # Or your DB host IP/name
+db_port: 5432
+db_name: "robot_data"
+db_user: "robot_researcher"
+db_password: "secret"
+db_table_name: "laser_scans"
+# Note: bag_directory is defined twice, remove one instance or ensure they match.
+# Let's assume the processor needs it primarily. Remove from recorder section above.
+# bag_directory: "/tmp/rosbags_for_ingest"
+poll_interval: 2.0
+topic_name_in_bag: "/scan"
+column_mapping:
+  time: "header.stamp"
+  frame_id: "header.frame_id"
+  angle_min: "angle_min"
+  angle_max: "angle_max"
+  angle_increment: "angle_increment"
+  time_increment: "time_increment"
+  scan_time: "scan_time"
+  range_min: "range_min"
+  range_max: "range_max"
+  ranges: "ranges"
+  intensities: "intensities"
